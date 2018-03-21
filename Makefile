@@ -34,11 +34,12 @@ CC=gcc
 
 # Name of .pc file. "lua5.1" on Debian/Ubuntu
 OUTFILE=gd.so
-CFLAGS=`gdlib-config --cflags` `pkg-config lua lua5.1 --cflags 2>/dev/null` -O3 -Wall -fPIC
-GDFEATURES=`gdlib-config --features |sed -e "s/GD_/-DGD_/g"`
-LFLAGS=-shared `gdlib-config --ldflags` `gdlib-config --libs` \
-    `pkg-config lua lua5.1 --libs 2>/dev/null` -lgd
-INSTALL_PATH=`pkg-config lua lua5.1 --variable=INSTALL_CMOD 2>/dev/null`
+CFLAGS=`pkg-config gdlib --cflags` `pkg-config lua --cflags 2>/dev/null` -O3 -Wall -fPIC
+# GD's PC file does not support --features, so we'll just assume they're all present..
+GDFEATURES=-DGD_FREETYPE -DGD_GIF -DGD_JPEG -DGD_XPM -DGD_PNG -DGD_FONTCONFIG
+LFLAGS=-shared `pkg-config gdlib --ldflags` `pkg-config gdlib --libs` \
+    `pkg-config lua --libs 2>/dev/null` -lgd
+INSTALL_PATH=`pkg-config lua --variable=INSTALL_CMOD 2>/dev/null`
 
 
 # ---------------------------------------------------------------------------
