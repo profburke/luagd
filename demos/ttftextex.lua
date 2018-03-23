@@ -1,4 +1,8 @@
-require "gd"
+#!/usr/bin/env lua
+
+gd = require "gd"
+require "display"
+
 
 gd.useFontConfig(true) -- Use Fontconfig by default.
 
@@ -44,4 +48,4 @@ im:string(gd.FONT_MEDIUM, 10, 340, fontpath, lblue)
 
 
 im:png("out.png")
-os.execute("display out.png")
+display "out.png"

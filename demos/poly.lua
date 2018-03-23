@@ -1,4 +1,8 @@
-require "gd"
+#!/usr/bin/env lua
+
+gd = require "gd"
+require "display"
+
 
 im = gd.createTrueColor(80, 80)
 assert(im)
@@ -11,4 +15,4 @@ im:filledPolygon( { { 30, 30 }, { 30, 40 }, { 40, 40 }, { 40, 30 } }, white)
 im:openPolygon( { { 50, 50 }, { 50, 60 }, { 60, 60 }, { 60, 50 } }, white)
 
 im:png("out.png")
-print(os.execute("display out.png"))
+display "out.png"

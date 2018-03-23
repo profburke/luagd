@@ -1,4 +1,9 @@
-require "gd"
+#!/usr/bin/env lua
+
+gd = require "gd"
+require "display"
+
+
 im = gd.createTrueColor(80, 80)
 assert(im)
 
@@ -7,4 +12,4 @@ white = im:colorAllocate(255, 255, 255)
 im:filledEllipse(40, 40, 70, 50, white)
 
 im:png("out.png")
-os.execute("display out.png")
+display "out.png"

@@ -7,7 +7,9 @@
 -- WARNING: Windows Notepad will add some prefixes, making this file an
 -- invalid Lua script.
 
-require "gd"
+gd = require "gd"
+require "display"
+
 
 local text = [[
 ⌠ ☾ Lua-GD
@@ -32,4 +34,4 @@ im:filledRectangle(0, 0, x, y, white)
 im:stringFT(black, fontname, 16, 0, 10, 30, text)
 
 im:png("utf-8.png")
-os.execute("display utf-8.png")
+display "utf-8.png"

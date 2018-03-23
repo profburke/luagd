@@ -1,4 +1,8 @@
-require "gd"
+#!/usr/bin/env lua
+
+gd = require "gd"
+require "display"
+
 
 x, y = 140, 110
 
@@ -16,4 +20,4 @@ im:line(60, 93, 70, 93, black)
 im:string(gd.FONT_SMALL, 80, 86, "= 10 px", black)
 
 im:png("stdfonts.png")
-
+display "stdfonts.png"

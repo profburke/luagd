@@ -1,4 +1,8 @@
-require "gd"
+#!/usr/bin/env lua
+
+gd = require "gd"
+require "display"
+
 
 im = gd.createFromJpeg("./bugs.jpg")
 assert(im)
@@ -14,4 +18,4 @@ gd.copy(im, imlua, 10, 25, 0, 0, sx, sy, sx, sy)
 im:string(gd.FONT_MEDIUM, 10, 330, "http://lua-gd.luaforge.net/", white)
 
 im:png("out.png")
-os.execute("display out.png")
+display "out.png"

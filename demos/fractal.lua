@@ -2,7 +2,9 @@
 
 -- Draws the famous Sierpinski triangle with lua-gd
 
-require "gd"
+gd = require "gd"
+require "display"
+
 
 size = 500
 
@@ -26,5 +28,4 @@ for i = 1, size do
 end
 
 im:png("out.png")
-os.execute("display out.png")
-
+display "out.png"

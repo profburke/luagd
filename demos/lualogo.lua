@@ -9,8 +9,9 @@
 -- $Id: lualogo.lua,v 1.3 2006/03/25 23:56:06 dermeister Exp $
 --
 
+gd = require "gd"
+require "display"
 
-require "gd"
 
 gd.useFontConfig(true)
 
@@ -59,4 +60,4 @@ function makelogo(size)
 end
 
 makelogo(140):png("lualogo.png")
-os.execute("display lualogo.png")
+display "lualogo.png"

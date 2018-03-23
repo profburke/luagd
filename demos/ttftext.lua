@@ -1,4 +1,8 @@
-require "gd"
+#!/usr/bin/env lua
+
+gd = require "gd"
+require "display"
+
 
 function boxedtext(im, color, font, size, ang, x, y, text, bcolor)
   font = "./" .. font .. ".ttf"
@@ -25,4 +29,4 @@ boxedtext(im, lbluet, "Vera", 36, 290, 160, 130, "FreeType", bluet)
 boxedtext(im, grayt, "Vera", 26, 180, 390, 360, "Turn 180° before read", bluet)
 
 im:png("out.png")
-os.execute("display out.png")
+display "out.png"

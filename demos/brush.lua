@@ -1,4 +1,8 @@
-require "gd"
+#!/usr/bin/env lua
+
+gd = require "gd"
+require "display"
+
 
 im = gd.createTrueColor(400, 400)
 assert(im)
@@ -15,4 +19,4 @@ im:line(240, 240, 250, 250, gd.BRUSHED)
 im:line(300, 300, 310, 310, gd.BRUSHED)
 
 im:png("out.png")
-os.execute("display out.png")
+display "out.png"

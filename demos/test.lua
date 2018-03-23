@@ -1,4 +1,8 @@
-require "gd"
+#!/usr/bin/env lua
+
+gd = require "gd"
+require "display"
+
 
 math.randomseed(os.time())
 
@@ -30,4 +34,4 @@ im2:stringFT(white, "./Vera.ttf", 45, math.pi/5, 340, 250, "FreeType")
 
 
 im2:png("out.png")
-os.execute("display out.png")
+display "out.png"

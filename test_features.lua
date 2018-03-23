@@ -2,7 +2,7 @@
 
 -- $Id: test_features.lua,v 1.7 2006/03/25 21:02:36 dermeister Exp $
 
-require "gd"
+gd = require "gd"
 
 function enabled(res, desc)
   local str = "    " .. desc .. " "

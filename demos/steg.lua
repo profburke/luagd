@@ -1,4 +1,4 @@
-#/usr/bin/env lua
+#!/usr/bin/env lua
 --[[
 
                       Steganography with Lua-GD
@@ -89,7 +89,7 @@ $Id: steg.lua,v 1.19 2006/05/01 00:39:09 dermeister Exp $
 --]]
 
 
-require "gd"
+gd = require "gd"
 
 
 function getLSB(n)

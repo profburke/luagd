@@ -1,4 +1,6 @@
-require "gd"
+#!/usr/bin/env lua
+
+gd = require "gd"
 
 im = gd.createPalette(120, 120)
 assert(im)

@@ -4,7 +4,7 @@
 -- (c) 2004 Alexandre Erwin Ittner
 -- $Id: clock.lua,v 1.16 2005/03/06 01:32:35 dermeister Exp $
 
-require "gd"
+gd = require "gd"
 
 function createClock(size, hours, minutes)
   local im = gd.createTrueColor(size, size)

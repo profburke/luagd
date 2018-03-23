@@ -1,7 +1,10 @@
+#!/usr/bin/env lua
 -- The fonts used in this example comes with Microsoft operating systems 
 -- and can be downloaded from http://corefonts.sourceforge.net
 
-require "gd"
+gd = require "gd"
+require "display"
+
 
 im = gd.createTrueColor(220, 190)
 white = im:colorAllocate(255, 255, 255)
@@ -18,4 +21,4 @@ im:stringFT(black, "Times New Roman", 20, 0, 10, 150, "Times New Roman")
 im:stringFT(black, "Comic Sans MS", 20, 0, 10, 180, "Comic Sans MS")
 
 im:png("out.png")
-os.execute("display out.png")
+display "out.png"

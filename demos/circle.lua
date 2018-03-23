@@ -1,6 +1,8 @@
 #!/usr/bin/env lua
 
-require "gd"
+gd = require "gd"
+require "display"
+
 
 im = gd.createTrueColor(100, 100)
 
@@ -11,4 +13,4 @@ im:filledRectangle(0, 0, 100, 100, white)
 im:stringFTCircle(50, 50, 40, 10, 0.9, "./Vera.ttf", 24, "Powered", "by Lua", blue)
 
 im:png("out.png")
-os.execute("display out.png")
+display "out.png"
